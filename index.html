@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLI Material Palette</title>
+    <meta property="og:title" content="CLI Material Palette">
+    <meta property="og:description" content="Design reference for CLI interfaces">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,15 +14,17 @@
             <h1>CLI Material Palette</h1>
             <div class="intro">
                 <p>A design reference for the fundamental materials of command-line interfaces.</p>
+                <p> Compiled by <a href="https://linkedin.com/in/mantaslilis" target="_blank">Mantas Lilis</a></p>
             </div>
         </header>
 
         <nav>
             <a href="#spatial">Spatial</a>
+            <a href="#temporal">Temporal</a>
             <a href="#typography">Typography</a>
             <a href="#colors">Colors</a>
             <a href="#symbols">Symbols</a>
-            <a href="#temporal">Temporal</a>
+            <a href="#interactive">Interactive</a>
         </nav>
 
         <main>
@@ -40,9 +44,9 @@
                 <div class="example">
                     <p class="try-label">Try in terminal</p>
                     <div class="example-header">
+                        <button class="execute-btn" data-example="grid">Run</button>
                         <button class="copy-lang-btn" data-code="tput cols
 printf '=%.0s' {1..80} && echo">Copy Bash</button>
-                        <button class="execute-btn" data-example="grid">Run</button>
                     </div>
 
                     <div class="output" id="output-grid"></div>
@@ -63,15 +67,27 @@ next command</div>
                 <div class="example">
                     <p class="try-label">Try in terminal</p>
                     <div class="example-header">
+                        <button class="execute-btn" data-example="tree">Run</button>
                         <button class="copy-lang-btn" data-code="echo 'project'
 echo '├── src'
 echo '│   ├── index.js'
 echo '│   └── utils.js'
 echo '└── package.json'">Copy Bash</button>
-                        <button class="execute-btn" data-example="tree">Run</button>
                     </div>
 
                     <div class="output" id="output-tree"></div>
+                </div>
+
+                <h3>Status with Details</h3>
+                <p>Use indentation to show task status and nested information.</p>
+
+                <div class="example">
+                    <p class="try-label">Try in browser</p>
+                    <div class="example-header">
+                        <button class="execute-btn" data-example="status">Run</button>
+                    </div>
+
+                    <div class="output" id="output-status"></div>
                 </div>
             </section>
 
@@ -93,12 +109,12 @@ echo '└── package.json'">Copy Bash</button>
                 <div class="example">
                     <p class="try-label">Try in terminal</p>
                     <div class="example-header">
+                        <button class="execute-btn" data-example="styles">Run</button>
                         <button class="copy-lang-btn" data-code="echo -e '\033[1mBold text\033[0m'
 echo -e '\033[2mDim text\033[0m'
 echo -e '\033[4mUnderlined\033[0m'
 echo -e '\033[7mInverse\033[0m'
 echo -e '\033[9mStrikethrough\033[0m'">Copy Bash</button>
-                        <button class="execute-btn" data-example="styles">Run</button>
                     </div>
 
                     <div class="output" id="output-styles"></div>
@@ -126,6 +142,7 @@ echo -e '\033[9mStrikethrough\033[0m'">Copy Bash</button>
                 <div class="example">
                     <p class="try-label">Try in terminal</p>
                     <div class="example-header">
+                        <button class="execute-btn" data-example="colors">Run</button>
                         <button class="copy-lang-btn" data-code="echo -e '\033[30mBlack\033[0m (30) / \033[90mBright Black\033[0m (90)'
 echo -e '\033[31mRed\033[0m (31) / \033[91mBright Red\033[0m (91)'
 echo -e '\033[32mGreen\033[0m (32) / \033[92mBright Green\033[0m (92)'
@@ -134,10 +151,21 @@ echo -e '\033[34mBlue\033[0m (34) / \033[94mBright Blue\033[0m (94)'
 echo -e '\033[35mMagenta\033[0m (35) / \033[95mBright Magenta\033[0m (95)'
 echo -e '\033[36mCyan\033[0m (36) / \033[96mBright Cyan\033[0m (96)'
 echo -e '\033[37mWhite\033[0m (37) / \033[97mBright White\033[0m (97)'">Copy Bash</button>
-                        <button class="execute-btn" data-example="colors">Run</button>
                     </div>
 
                     <div class="output" id="output-colors"></div>
+                </div>
+
+                <h3>Diff Highlighting</h3>
+                <p>Show code changes with color-coded additions and deletions.</p>
+
+                <div class="example">
+                    <p class="try-label">Try in browser</p>
+                    <div class="example-header">
+                        <button class="execute-btn" data-example="diff">Run</button>
+                    </div>
+
+                    <div class="output" id="output-diff"></div>
                 </div>
             </section>
 
@@ -191,6 +219,7 @@ echo -e '\033[37mWhite\033[0m (37) / \033[97mBright White\033[0m (97)'">Copy Bas
                 <div class="example">
                     <p class="try-label">Try in terminal</p>
                     <div class="example-header">
+                        <button class="execute-btn" data-example="symbols">Run</button>
                         <button class="copy-lang-btn" data-code="echo 'Status & Completion:'
 echo '  ✓ Success  ✗ Failed  ⚠ Warning  ℹ Info'
 echo ''
@@ -205,7 +234,6 @@ echo '  ■ ■ ■ □ □  [60%]'
 echo ''
 echo 'Arrows & Navigation:'
 echo '  → Next  ← Back  ↑ Up  ↓ Down'">Copy Bash</button>
-                        <button class="execute-btn" data-example="symbols">Run</button>
                     </div>
 
                     <div class="output" id="output-symbols"></div>
@@ -219,47 +247,124 @@ echo '  → Next  ← Back  ↑ Up  ↓ Down'">Copy Bash</button>
                 <h3>Progress Indicators</h3>
                 <p>Character-based animations for "working" states.</p>
 
-                <div class="demo-box">⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏  — spinner frames
-▏▎▍▌▋▊▉█  — progress bars
-... ··· …  — loading states</div>
+                <div class="demo-box"><strong>Spinning:</strong>
+⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏  — braille spinner
+⣾⣽⣻⢿⡿⣟⣯⣷  — dots spinner
+◐◓◑◒  — half circles
+
+<strong>Progress Bars:</strong>
+▏▎▍▌▋▊▉█  — eighth blocks
+
+<strong>Block Style:</strong>
+░▒▓█  — shading progression
+▁▂▃▄▅▆▇█  — vertical growth
+
+<strong>Corner Arcs:</strong>
+◜◝◞◟  — rotating corners
+
+<strong>Corner Boxes:</strong>
+▖▘▝▗  — box corners
+
+<strong>Size Progression:</strong>
+⋅∙·•●  — growing dots
+
+<strong>Block Shading:</strong>
+░░▒▒▓▓██  — gradient fill
+
+<strong>Size Pulsing:</strong>
+·•●•·  — dot pulse
+∘○◯○∘  — circle pulse
+
+<strong>Star Bursts:</strong>
+✦✧★✧✦  — twinkling
+✶✷✸✹  — burst pattern</div>
 
                 <div class="example">
-                    <p class="try-label">Try in terminal</p>
+                    <p class="try-label">Try in browser</p>
                     <div class="example-header">
-                        <button class="copy-lang-btn" data-code="for i in {1..5}; do
-  bar=$(printf '█%.0s' $(seq 1 $i))
-  echo &quot;[${bar}$(printf ' %.0s' $(seq 1 $((5-i))))] $((i*20))%&quot;
-done">Copy Bash</button>
                         <button class="execute-btn" data-example="progress">Run</button>
                     </div>
 
                     <div class="output" id="output-progress"></div>
                 </div>
+
+                <h3>Blinking Text Animation</h3>
+                <p>Cycle through characters to create attention-grabbing effects.</p>
+
+                <div class="example">
+                    <p class="try-label">Try in browser</p>
+                    <div class="example-header">
+                        <button class="execute-btn" data-example="blink">Run</button>
+                    </div>
+
+                    <div class="output" id="output-blink"></div>
+                </div>
+
+                <h3>Task List Execution</h3>
+                <p>Show real-time progress through multiple tasks.</p>
+
+                <div class="example">
+                    <p class="try-label">Try in browser</p>
+                    <div class="example-header">
+                        <button class="execute-btn" data-example="tasks">Run</button>
+                    </div>
+
+                    <div class="output" id="output-tasks"></div>
+                </div>
             </section>
 
             <!-- Interactive -->
-            <!-- <section id="interactive">
+            <section id="interactive">
                 <h2>Interactive Patterns</h2>
 
-                <h3>Confirmation Prompts</h3>
-
-                <div class="demo-box">? Select environment (dev/prod):
-  ↳ Enter version (default: latest):
-Continue? (Y/n):</div>
-
-                <p>Standard patterns for user input and confirmation.</p>
+                <h3>Menu Selection</h3>
+                <p>Navigate through options with visual feedback.</p>
 
                 <div class="example">
-                    <p class="try-label">Try in terminal</p>
+                    <p class="try-label">Try in browser</p>
                     <div class="example-header">
-                        <button class="copy-lang-btn" data-code="read -p '? Select environment: ' env
-echo &quot;You selected: $env&quot;">Copy Bash</button>
-                        <button class="execute-btn" data-example="interactive">Run</button>
+                        <button class="execute-btn" data-example="menu">Run</button>
                     </div>
 
-                    <div class="output" id="output-interactive"></div>
+                    <div class="output" id="output-menu"></div>
                 </div>
-            </section> -->
+
+                <h3>Checkbox & Radio Groups</h3>
+                <p>Toggle selections with interactive controls.</p>
+
+                <div class="example">
+                    <p class="try-label">Try in browser</p>
+                    <div class="example-header">
+                        <button class="execute-btn" data-example="checkbox">Run</button>
+                    </div>
+
+                    <div class="output" id="output-checkbox"></div>
+                </div>
+
+                <h3>Confirmation Dialogs</h3>
+                <p>Standard patterns for user confirmation.</p>
+
+                <div class="example">
+                    <p class="try-label">Try in browser</p>
+                    <div class="example-header">
+                        <button class="execute-btn" data-example="confirm">Run</button>
+                    </div>
+
+                    <div class="output" id="output-confirm"></div>
+                </div>
+
+                <h3>Tab Navigation</h3>
+                <p>Switch between different views or contexts.</p>
+
+                <div class="example">
+                    <p class="try-label">Try in browser</p>
+                    <div class="example-header">
+                        <button class="execute-btn" data-example="tabs">Run</button>
+                    </div>
+
+                    <div class="output" id="output-tabs"></div>
+                </div>
+            </section>
         </main>
 
         <footer>

@@ -19,6 +19,16 @@ body {
     margin: 0 auto;
 }
 
+a {
+    color: #666;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: #999;
+}
+
 /* Typography */
 h1 {
     font-size: 32px;
